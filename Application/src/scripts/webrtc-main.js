@@ -1,14 +1,17 @@
-var localMediaComponent = require('localMedia');
+define(function (require) {
 
-var webrtc = {
+	var localMediaComponent = require('localMedia');
 
-	init: function() {
-		console.log('webrtc-js initialized');
-	},
+	var webrtc = {
 
-	getMedia: function(isAudio, isVideo) {
-		localMediaComponent.getMedia(isAudio, isVideo);
-	}
-};
+		init: function() {
+			console.log('webrtc-js initialized');
+		},
 
-return webrtc;
+		getMedia: function(isAudio, isVideo) {
+			localMediaComponent.getMedia(isAudio, isVideo);
+		}
+	};
+
+	return webrtc;
+});

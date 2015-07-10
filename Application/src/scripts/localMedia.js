@@ -1,22 +1,25 @@
-var localMedia = {
+define(function (require) {
 
-	getMedia: function(isAudio, isVideo) {
-		window.getUserMedia({
-			'audio' : isAudio,
-			'video' : isVideo
+	var localMedia = {
+
+		getMedia: function(isAudio, isVideo) {
+			window.getUserMedia({
+				'audio' : isAudio,
+				'video' : isVideo
+			},
+			gotUserMedia,
+			didntGetUserMedia
+			);
+		}
+
+		gotUserMedia: function(stream) {
+			window.attachMediaStream($(".webrtc-video"), stream);
 		},
-		gotUserMedia,
-		didntGetUserMedia
-		);
+
+		didntGetUserMedia: function() {
+			console.log("couldnt get video");
+		}
 	}
 
-	gotUserMedia: function(stream) {
-		window.attachMediaStream($(".webrtc-video"), stream);
-	},
-
-	didntGetUserMedia: function() {
-		console.log("couldnt get video");
-	}
-}
-
-return localMedia;
+	return localMedia;
+});
