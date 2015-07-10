@@ -5,7 +5,7 @@ define(function (require) {
 		displayName: 'video',
 		render: function() {
 			return (
-				React.createElement('div', {className: "webrtc-video"});
+				React.createElement('div', {className: "webrtc-video"})
 			);
 		}
 	});
