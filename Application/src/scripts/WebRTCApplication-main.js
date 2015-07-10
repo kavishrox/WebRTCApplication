@@ -1,5 +1,5 @@
 define(function (require) {
-	var webrtc = require('webrtc-main');
+	var webrtc = require('src/scripts/webrtc-main');
 
 	var VideoArea = React.createClass({
 		displayName: 'video',

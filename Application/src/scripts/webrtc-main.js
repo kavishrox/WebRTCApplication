@@ -1,6 +1,6 @@
 define(function (require) {
 
-	var localMediaComponent = require('localMedia');
+	var localMediaComponent = require('src/scripts/localMedia');
 
 	var webrtc = {
 
