@@ -5,15 +5,16 @@ define(function (require) {
 		displayName: 'video',
 		render: function() {
 			return (
-				React.createElement('div', {className: "webrtc-video"})
+				React.createElement('video', {className: "webrtc-video", autoPlay: "autoplay", id: "local-video"})
 			);
 		}
 	});
 
 	React.render(
-		React.createElement(VideoArea, {autoplay: 'autoplay'}),
+		React.createElement(VideoArea),
 		document.getElementById("WebRTCApplication-container")
 	);
 
 	webrtc.init();
+	webrtc.getMedia(true,true);
 });

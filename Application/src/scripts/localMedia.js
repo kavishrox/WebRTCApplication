@@ -7,13 +7,14 @@ define(function (require) {
 				'audio' : isAudio,
 				'video' : isVideo
 			},
-			gotUserMedia,
-			didntGetUserMedia
+			this.gotUserMedia,
+			this.didntGetUserMedia
 			);
-		}
+		},
 
 		gotUserMedia: function(stream) {
-			window.attachMediaStream($(".webrtc-video"), stream);
+			var myVideo = document.getElementById('local-video');
+			window.attachMediaStream(myVideo, stream);
 		},
 
 		didntGetUserMedia: function() {
